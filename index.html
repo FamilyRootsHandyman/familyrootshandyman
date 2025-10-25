@@ -7,7 +7,7 @@
   <meta name="description" content="Family Roots Handyman: trustworthy, quality plumbing and home repair services you can count on. Fair rates, clear communication, and craftsmanship that lasts." />
   <meta name="author" content="Family Roots Handyman" />
   <meta property="og:title" content="Family Roots Handyman" />
-  <meta property="og:description" content="Trustworthy plumbing & home repairs. Fair rates. Quality work. Family‑oriented service." />
+  <meta property="og:description" content="Trustworthy plumbing & home repairs. Fair rates. Quality work. Family-oriented service." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://familyrootshandyman.com" />
   <meta property="og:image" content="https://familyrootshandyman.com/og-cover.jpg" />
@@ -25,32 +25,44 @@
       --tan:#fef3c7;          /* warm highlight */
       --brick:#dc2626;        /* alert / emergency */
       --ring: 0 1px 2px rgba(15,23,42,.12), 0 6px 20px rgba(15,23,42,.08);
+
+      /* keep header slim; logo and phone-pill share this height */
+      --header-pill: 45px;
     }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--leaf-2);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{width:min(1120px,92vw);margin-inline:auto}
+
     .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--leaf);color:#fff;padding:.9rem 1.1rem;border-radius:14px;font-weight:700;box-shadow:var(--ring);transition:transform .08s ease,opacity .2s ease}
     .btn:hover{transform:translateY(-1px);opacity:.95;text-decoration:none}
     .btn.alt{background:var(--ink-2)}
     .btn.light{background:#fff;color:var(--leaf);border:1px solid #e5e7eb}
     .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:999px;background:#fff;border:1px solid #e5e7eb;font-size:.82rem;color:var(--ink-2)}
-    header{position:sticky;top:0;background:rgba(250,250,249,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #eee;z-index:20}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+
+    /* Header (slim) */
+    header{position:sticky;top:0;background:rgba(250,250,249,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #eee;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
     .brand{display:flex;align-items:center;gap:.65rem;font-weight:800;letter-spacing:.2px}
-    .brand img{height:48px;width:auto} /* slightly larger logo without growing header */
+    .brand .logo{height:var(--header-pill);width:auto;display:block}
+    header .btn{height:var(--header-pill);padding:0 1.1rem;display:inline-flex;align-items:center}
+
+    /* Hero */
     .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%, #f8fafc 50%, #f1f5f9 100%)}
     .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3.2rem 0 2.4rem}
     .tagline{font-size:clamp(2rem,4vw,3rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0}
     .sub{font-size:1.05rem;color:#334155;margin:.9rem 0 1.3rem}
     .badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.4rem}
-    .illus{position:relative;border-radius:22px;background:radial-gradient(1200px 600px at 20% 10%, #dcfce7 0, transparent 40%),
-                                     radial-gradient(800px 400px at 110% 20%, #dbeafe 0, transparent 45%),
-                                     radial-gradient(600px 300px at 50% 120%, #fde68a 0, transparent 50%);
-           box-shadow:var(--ring); padding:18px;} /* remove fixed aspect ratio so bg grows with content */
-    .illus:before{content:"";position:absolute;inset:0;border-radius:22px;background:conic-gradient(from 180deg at 60% 20%,#16a34a22,#16a34a03,#2563eb10,#16a34a22);mix-blend:overlay;pointer-events:none}
-    .illus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px} /* responsive grid that wraps so bg covers all cards */
+
+    /* Hero showcase cards — background expands with content */
+    .illus{position:relative;border-radius:22px;background:
+        radial-gradient(1200px 600px at 20% 10%, #dcfce7 0, transparent 40%),
+        radial-gradient(800px 400px at 110% 20%, #dbeafe 0, transparent 45%),
+        radial-gradient(600px 300px at 50% 120%, #fde68a 0, transparent 50%);
+        box-shadow:var(--ring);padding:18px}
+    .illus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
     .card{background:#fff;border:1px solid #eef2f7;border-radius:16px;padding:14px;display:flex;gap:.8rem;align-items:flex-start;box-shadow:var(--ring)}
     .card h4{margin:.1rem 0 .2rem;font-size:1rem}
     .card p{margin:0;color:#475569;font-size:.92rem}
@@ -84,7 +96,6 @@
     details[open]{border-color:#d1fae5}
 
     footer{padding:2.2rem 0;border-top:1px solid #eee;color:#475569}
-
     .eyebrow{display:inline-block;padding:.35rem .6rem;border-radius:999px;background:var(--tan);color:#92400e;font-weight:700;letter-spacing:.3px;text-transform:uppercase;font-size:.75rem}
 
     @media (max-width:980px){
@@ -94,7 +105,9 @@
     }
     @media (max-width:640px){.grid{grid-template-columns:1fr}}
   </style>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%2314532d' d='M32 6c9 0 16 7 16 16 0 13-16 26-16 26S16 35 16 22c0-9 7-16 16-16z'/%3E%3Cpath fill='%230f172a' d='M14 42h36v12a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V42z'/%3E%3Crect x='22' y='38' width='20' height='6' rx='2' fill='%2316a34a'/%3E%3C/svg%3E" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%232d4f3a' d='M32 6c9 0 16 7 16 16 0 13-16 26-16 26S16 35 16 22c0-9 7-16 16-16z'/%3E%3Cpath fill='%230f172a' d='M14 42h36v12a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V42z'/%3E%3Crect x='22' y='38' width='20' height='6' rx='2' fill='%233e6e54'/%3E%3C/svg%3E" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -102,12 +115,12 @@
     "name": "Family Roots Handyman",
     "url": "https://familyrootshandyman.com",
     "image": "https://familyrootshandyman.com/og-cover.jpg",
-    "description": "Trustworthy plumbing and home repair services. Fair rates, quality work, family‑oriented care.",
+    "description": "Trustworthy plumbing and home repair services. Fair rates, quality work, family-oriented care.",
     "areaServed": "Weslaco, TX and the Rio Grande Valley",
     "telephone": "+1-956-463-8312",
     "priceRange": "$$",
     "sameAs": [],
-    "serviceType": ["Plumbing", "General Handyman", "Electrical", "Fencing", "Carpentry", "Small Concrete Projects"],
+    "serviceType": ["Plumbing", "General Handyman", "Electrical", "Fencing", "Carpentry", "Landscaping", "Small Concrete Projects"],
     "openingHours": "Mo,Tu,We,Th,Fr,Sa 08:00-18:00"
   }
   </script>
@@ -115,17 +128,17 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container nav">
+    <div class="container nav" id="nav">
       <a class="brand" href="#home" aria-label="Family Roots Handyman">
-        <!-- Logo image -->
-        <img src="logo.png" alt="Family Roots Handyman logo" class="logo"/>
+        <img src="logo2.png" alt="Family Roots Handyman logo" class="logo" />
         <span>Family Roots Handyman</span>
       </a>
       <nav aria-label="Primary">
         <a class="chip" href="#services">Services</a>
         <a class="chip" href="#about">About</a>
         <a class="chip" href="#faq">FAQ</a>
-        <span class="btn" role="text">956-463-8312</span>
+        <!-- Non-clickable, bold phone pill as requested -->
+        <a class="btn" href="tel:9564638312">956-463-8312</a>
       </nav>
     </div>
   </header>
@@ -134,24 +147,26 @@
   <section id="home" class="hero">
     <div class="container wrap">
       <div>
-        <span class="eyebrow">Plumbing‑first. Handy at everything.</span>
+        <span class="eyebrow">PLUMBING-FIRST. HANDY AT EVERYTHING.</span>
         <p class="sub"><strong>Serving the Rio Grande Valley — proudly based in Weslaco, TX.</strong></p>
-        <h1 class="tagline">Repairs done right the first time.<br/>Fair, clear, and family‑oriented.</h1>
-        <p class="sub">From leaky pipes and water heaters to fences and floor repairs, Mando brings dependable craftsmanship and straight‑up communication. No fuss, no surprises.</p>
+        <h1 class="tagline">Repairs done right the<br/>first time.<br/>Fair, clear, and<br/>family-oriented.</h1>
+        <p class="sub">From leaky pipes and water heaters to fences and floor repairs, Mando brings dependable craftsmanship and straight-up communication. No fuss, no surprises.</p>
         <div class="badges" role="list">
           <div class="chip" role="listitem">Experienced plumbing focus</div>
           <div class="chip" role="listitem">Upfront, fair estimates</div>
-          <div class="chip" role="listitem">Family‑owned & community‑minded</div>
+          <div class="chip" role="listitem">Family-owned & community-minded</div>
         </div>
         <div style="display:flex;gap:.6rem;flex-wrap:wrap">
           <a class="btn" href="#contact">Get a free estimate</a>
           <a class="btn alt" href="#services">See services</a>
         </div>
       </div>
+
+      <!-- Hero cards (background now fits all cards) -->
       <div class="illus" aria-hidden="true">
         <div class="illus-grid">
           <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21v-6h14v6H5Zm2-2h10v-2H7v2ZM7 3h10l2 8H5l2-8Zm2 2-1 4h8l-1-4H9Z"/></svg><div><h4>Water Heaters</h4><p>Replace & install units, supply lines, drip pans, code checks.</p></div></div>
-          <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12h20v2H2zM4 8h16v2H4zM6 4h12v2H6z"/></svg><div><h4>Pipe Work</h4><p>Busted/leaking pipes, repipes, shutoff valves, clean‑ups.</p></div></div>
+          <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12h20v2H2zM4 8h16v2H4zM6 4h12v2H6z"/></svg><div><h4>Pipe Work</h4><p>Busted/leaking pipes, repipes, shutoff valves, clean-ups.</p></div></div>
           <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 13h18v8H3zM7 3h10v6H7z"/></svg><div><h4>Appliance Hookups</h4><p>Dishwashers, disposals, ice makers — neat and tested.</p></div></div>
           <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 10h16v10H4zM9 4h6v4H9z"/></svg><div><h4>Electrical</h4><p>New outlets/lines, switches, light fixtures, careful tracing.</p></div></div>
           <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20V8l8-5 8 5v12H4z"/></svg><div><h4>Framing & Floors</h4><p>Replace rotted 2x’s, joists, sheathing — solid and square.</p></div></div>
@@ -174,7 +189,7 @@
             <li>Water heaters (replace & install)</li>
             <li>Faucets, spigots, supply lines</li>
             <li>Busted/leaking pipes • rework & repairs</li>
-            <li>Dishwashers & disposals hook‑up</li>
+            <li>Dishwashers & disposals hook-up</li>
           </ul>
         </div>
         <div class="service" role="listitem">
@@ -194,18 +209,12 @@
           </ul>
         </div>
         <div class="service" role="listitem">
-          <h3>Fencing</h3>
+          <h3>Fencing & Concrete</h3>
           <ul>
             <li>Privacy fence builds & repairs</li>
             <li>Hurricane fence builds & repairs</li>
-          </ul>
-        </div>
-        <div class="service" role="listitem">
-          <h3>Small Concrete</h3>
-          <ul>
             <li>Small pads & landings</li>
             <li>Fence post footings</li>
-            <li>Crack patching</li>
           </ul>
         </div>
         <div class="service" role="listitem">
@@ -229,13 +238,13 @@
       <div class="panel" style="margin-top:18px">
         <div>
           <strong style="font-size:1.2rem;display:block">Fair, clear pricing.</strong>
-          <span style="opacity:.95">You’ll know the scope and cost before work begins. No inflated add‑ons. Just solid work.</span>
+          <span style="opacity:.95">You’ll know the scope and cost before work begins. No inflated add-ons. Just solid work.</span>
         </div>
         <a class="btn light" href="#contact">Request an estimate</a>
       </div>
 
       <div class="trust">
-        <div class="t"><strong>On‑time</strong><span>Respect for your schedule</span></div>
+        <div class="t"><strong>On-time</strong><span>Respect for your schedule</span></div>
         <div class="t"><strong>Clean work</strong><span>We tidy as we go</span></div>
         <div class="t"><strong>Transparent</strong><span>Explain options & next steps</span></div>
       </div>
@@ -248,7 +257,7 @@
       <div class="card-lg">
         <h2>Rooted in family. Built on trust.</h2>
         <p>Mando started Family Roots Handyman with a simple promise: treat every job like it’s for our own home. We focus on quality, durability, and clear communication. Plumbing is our foundation, and we bring that same precision to electrical, fencing, and repair projects around your home.</p>
-        <p>We’re proud to serve our community and earn repeat business through word‑of‑mouth. If you’re looking for reliable help at a fair rate, you’ve found your crew.</p>
+        <p>We’re proud to serve our community and earn repeat business through word-of-mouth. If you’re looking for reliable help at a fair rate, you’ve found your crew.</p>
         <div class="badges" role="list">
           <div class="chip" role="listitem">Respect for your home</div>
           <div class="chip" role="listitem">Clear estimates & updates</div>
@@ -257,13 +266,14 @@
       </div>
       <div class="card-lg">
         <h2>Areas we serve</h2>
-        <p><em>Rio Grande Valley, TX</em> and nearby communities. Need help outside the area? Ask and we’ll see what we can do.</p>
+        <p><em>Weslaco, TX</em> and the entire Rio Grande Valley — McAllen, Mission, Pharr, Edinburg, Donna, Mercedes, Harlingen, San Benito, Alamo, and more.</p>
         <div class="panel" style="margin-top:10px">
           <div>
             <strong>Need help fast?</strong>
-            <div>Call and ask for <strong>Mando</strong>. We’ll walk you through shut‑offs and first steps.</div>
+            <div>We’ll walk you through shut-offs and first steps.</div>
           </div>
-          <span class="btn" role="text">956-463-8312</span>
+          <!-- keep as visible phone pill for consistency -->
+          <a class="btn" href="tel:9564638312">956-463-8312</a>
         </div>
       </div>
     </div>
@@ -276,7 +286,7 @@
       <div class="faq">
         <details>
           <summary>How do estimates work?</summary>
-          <div>Share a few photos and details. For straightforward jobs we can quote remotely; for larger work we’ll schedule a quick on‑site visit. Either way, you’ll get a clear scope and price before we start.</div>
+          <div>Share a few photos and details. For straightforward jobs we can quote remotely; for larger work we’ll schedule a quick on-site visit. Either way, you’ll get a clear scope and price before we start.</div>
         </details>
         <details>
           <summary>Do you guarantee your work?</summary>
@@ -299,9 +309,9 @@
     <div class="container cols">
       <div class="card-lg">
         <h2>Tell us about your project</h2>
-        <p>Describe the issue or project, and we’ll reply with next steps and a fair estimate.</p>
-        <form id="contactForm" action="https://formspree.io/f/your-id" method="POST">
-          <!-- Replace action with your Formspree ID or use mailto:someone@example.com -->
+        <p>Describe the issue or project, and we’ll reply with next steps and a fair estimate. We’re centrally located in Weslaco, so we can reach most Valley homes fast.</p>
+        <form id="contactForm" action="https://formspree.io/f/mblpjlpd" method="POST">
+          <input type="hidden" name="form" value="Family Roots Handyman Website Inquiry">
           <div class="row">
             <div style="flex:1">
               <label for="name">Name</label>
@@ -309,7 +319,7 @@
             </div>
             <div style="flex:1">
               <label for="phone">Phone</label>
-              <input id="phone" name="phone" inputmode="tel" placeholder="(555) 555‑5555" />
+              <input id="phone" name="phone" inputmode="tel" placeholder="(956) 463-8312" />
             </div>
           </div>
           <label for="email">Email</label>
@@ -318,22 +328,22 @@
           <textarea id="message" name="message" required placeholder="Tell us what’s going on"></textarea>
           <div style="display:flex;gap:.6rem;align-items:center;margin-top:.8rem">
             <button class="btn" type="submit">Send request</button>
-            <a class="btn light" href="tel:+10000000000">Or call now</a>
+            <span class="btn" role="text">956-463-8312</span>
           </div>
           <input type="hidden" name="source" value="Website form" />
         </form>
       </div>
       <div class="card-lg">
         <h2>Why neighbors choose us</h2>
-        <div class="card" style="margin-bottom:10px"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2l7 6v12a2 2 0 0 1-2 2h-3v-7H10v7H7a2 2 0 0 1-2-2V8l7-6z"/></svg><div><h4>Family‑oriented</h4><p>We treat your home with the care we want for ours.</p></div></div>
+        <div class="card" style="margin-bottom:10px"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2l7 6v12a2 2 0 0 1-2 2h-3v-7H10v7H7a2 2 0 0 1-2-2V8l7-6z"/></svg><div><h4>Family-oriented</h4><p>We treat your home with the care we want for ours.</p></div></div>
         <div class="card" style="margin-bottom:10px"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg><div><h4>Straightforward pricing</h4><p>Clear scopes. Fair rates. Options explained before work begins.</p></div></div>
         <div class="card"><svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 17l-5-5 1.41-1.41L9 14.17l9.59-9.59L20 6z"/></svg><div><h4>Quality that lasts</h4><p>We use solid materials and proven methods. Done right the first time.</p></div></div>
         <div class="panel" style="margin-top:12px;background:linear-gradient(175deg,#14532d,#0f172a)">
           <div>
             <strong>Need a second opinion?</strong>
-            <div>Send photos of your issue — we’ll confirm the best path.</div>
+            <div>Send me a text with photos of your issue — we’ll confirm the best path. </div>
           </div>
-          <a class="btn light" href="#contact">Send photos</a>
+          <a class="btn light" href="sms:9564638312">Send photos</a>
         </div>
       </div>
     </div>
@@ -355,10 +365,11 @@
   </footer>
 
   <script>
-    // Update year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Footer year
+    const yEl = document.getElementById('year');
+    if (yEl) yEl.textContent = new Date().getFullYear();
 
-    // Optional: lightweight client-side validation
+    // Simple email validation
     const form = document.getElementById('contactForm');
     form?.addEventListener('submit', (e) => {
       const email = document.getElementById('email');
@@ -371,13 +382,10 @@
 
   <!--
     Deployment notes
-    1) Replace all placeholder phone numbers with Mando’s
-       Search for: +10000000000
-    2) (Optional) Replace Formspree endpoint in the form action.
-       Create one at https://formspree.io, then paste the form ID.
-    3) Add an image named og-cover.jpg at site root for social previews.
-    4) To change service area wording, edit the JSON-LD and the Areas section.
-    5) When you connect the custom domain on GitHub Pages, add a CNAME file with: familyrootshandyman.com
+    1) Upload logo2.png at the repo root.
+    2) Replace Formspree endpoint in the form action when ready.
+    3) Add og-cover.jpg at site root for social preview.
+    4) CNAME file should contain: familyrootshandyman.com (for GitHub Pages)
   -->
 </body>
 </html>
