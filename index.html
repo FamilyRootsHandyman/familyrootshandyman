@@ -15,8 +15,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root{$1
-      --header-pill: 44px; /* keeps logo and phone pill same height without changing banner */
+    :root{
+      --ink:#0f172a;          /* deep slate */
+      --ink-2:#1f2937;        /* slate */
+      --leaf:#2d4f3a;         /* deep green from logo */
+      --leaf-2:#3e6e54;       /* accent green from logo */
+      --sand:#f1f5f9;         /* soft base */
+      --cream:#fafaf9;        /* light base */
+      --tan:#fef3c7;          /* warm highlight */
+      --brick:#dc2626;        /* alert / emergency */
+      --ring: 0 1px 2px rgba(15,23,42,.12), 0 6px 20px rgba(15,23,42,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
@@ -29,10 +37,9 @@
     .btn.light{background:#fff;color:var(--leaf);border:1px solid #e5e7eb}
     .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:999px;background:#fff;border:1px solid #e5e7eb;font-size:.82rem;color:var(--ink-2)}
     header{position:sticky;top:0;background:rgba(250,250,249,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #eee;z-index:20}
-    header .btn{height:var(--header-pill);padding:0 1.1rem;display:inline-flex;align-items:center} /* only header buttons use fixed height */
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
     .brand{display:flex;align-items:center;gap:.65rem;font-weight:800;letter-spacing:.2px}
-    .brand img{height:var(--header-pill);width:auto} /* match phone pill height */
+    .brand img{height:48px;width:auto} /* slightly larger logo without growing header */
     .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%, #f8fafc 50%, #f1f5f9 100%)}
     .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3.2rem 0 2.4rem}
     .tagline{font-size:clamp(2rem,4vw,3rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0}
