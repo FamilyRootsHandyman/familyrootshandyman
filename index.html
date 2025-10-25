@@ -18,8 +18,8 @@
     :root{
       --ink:#0f172a;          /* deep slate */
       --ink-2:#1f2937;        /* slate */
-      --leaf:#14532d;         /* deep green */
-      --leaf-2:#16a34a;       /* accent green */
+      --leaf:#2d4f3a;         /* deep green from logo */
+      --leaf-2:#3e6e54;       /* accent green from logo */
       --sand:#f1f5f9;         /* soft base */
       --cream:#fafaf9;        /* light base */
       --tan:#fef3c7;          /* warm highlight */
@@ -39,7 +39,7 @@
     header{position:sticky;top:0;background:rgba(250,250,249,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #eee;z-index:20}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
     .brand{display:flex;align-items:center;gap:.65rem;font-weight:800;letter-spacing:.2px}
-    .brand svg{width:34px;height:34px}
+    .brand img{height:34px;width:auto}
     .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%, #f8fafc 50%, #f1f5f9 100%)}
     .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3.2rem 0 2.4rem}
     .tagline{font-size:clamp(2rem,4vw,3rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0}
@@ -103,8 +103,8 @@
     "url": "https://familyrootshandyman.com",
     "image": "https://familyrootshandyman.com/og-cover.jpg",
     "description": "Trustworthy plumbing and home repair services. Fair rates, quality work, family‑oriented care.",
-    "areaServed": "Rio Grande Valley, TX",
-    "telephone": "+1-000-000-0000",
+    "areaServed": "Weslaco, TX and the Rio Grande Valley",
+    "telephone": "+1-956-463-8312",
     "priceRange": "$$",
     "sameAs": [],
     "serviceType": ["Plumbing", "General Handyman", "Electrical", "Fencing", "Carpentry", "Small Concrete Projects"],
@@ -117,19 +117,15 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Family Roots Handyman">
-        <!-- Logo (house + tree) -->
-        <svg viewBox="0 0 64 64" aria-hidden="true" role="img">
-          <path fill="var(--leaf)" d="M32 6c9 0 16 7 16 16 0 13-16 26-16 26S16 35 16 22c0-9 7-16 16-16z"/>
-          <path fill="var(--ink)" d="M14 42h36v12a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V42z"/>
-          <rect x="22" y="38" width="20" height="6" rx="2" fill="var(--leaf-2)"/>
-        </svg>
+        <!-- Logo image -->
+        <img src="logo.png" alt="Family Roots Handyman logo" class="logo"/>
         <span>Family Roots Handyman</span>
       </a>
       <nav aria-label="Primary">
         <a class="chip" href="#services">Services</a>
         <a class="chip" href="#about">About</a>
         <a class="chip" href="#faq">FAQ</a>
-        <a class="btn" href="tel:+10000000000">Call Now</a>
+        <span class="btn" role="text">956-463-8312</span>
       </nav>
     </div>
   </header>
@@ -139,6 +135,7 @@
     <div class="container wrap">
       <div>
         <span class="eyebrow">Plumbing‑first. Handy at everything.</span>
+        <p class="sub"><strong>Serving the Rio Grande Valley — proudly based in Weslaco, TX.</strong></p>
         <h1 class="tagline">Repairs done right the first time.<br/>Fair, clear, and family‑oriented.</h1>
         <p class="sub">From leaky pipes and water heaters to fences and floor repairs, Mando brings dependable craftsmanship and straight‑up communication. No fuss, no surprises.</p>
         <div class="badges" role="list">
@@ -212,6 +209,14 @@
           </ul>
         </div>
         <div class="service" role="listitem">
+          <h3>Landscaping</h3>
+          <ul>
+            <li>Grass cutting & mowing</li>
+            <li>Weed eating & edging</li>
+            <li>Small and large lawns</li>
+          </ul>
+        </div>
+        <div class="service" role="listitem">
           <h3>Emergency Help</h3>
           <ul>
             <li>Shutoff & leak mitigation</li>
@@ -258,7 +263,7 @@
             <strong>Need help fast?</strong>
             <div>Call and ask for <strong>Mando</strong>. We’ll walk you through shut‑offs and first steps.</div>
           </div>
-          <a class="btn" href="tel:+10000000000">Call Mando</a>
+          <span class="btn" role="text">956-463-8312</span>
         </div>
       </div>
     </div>
@@ -308,7 +313,7 @@
             </div>
           </div>
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <input id="email" name="email" type="email" required placeholder="FamilyRootsHandyman@gmail.com" />
           <label for="message">How can we help?</label>
           <textarea id="message" name="message" required placeholder="Tell us what’s going on"></textarea>
           <div style="display:flex;gap:.6rem;align-items:center;margin-top:.8rem">
